@@ -1,0 +1,45 @@
+[project]
+name = "cracy-certval"
+version = "1.0.0"
+description = "CRACY Certificate Validator - generate, corrupt and classify X.509 chains to test certificate-validation logic"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+keywords = ["x509", "certificate", "pki", "openssl", "cra", "compliance", "testing"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Testing",
+]
+
+# No third-party runtime dependencies: every certificate operation is
+# delegated to the system `openssl` binary, which must be on PATH.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+cracy-cert-generate = "cracy_certval.generate:main"
+cracy-cert-invalidate = "cracy_certval.invalidate:main"
+cracy-cert-validate = "cracy_certval.validate:main"
+
+[project.urls]
+Homepage = "https://github.com/CRA-tools/CRACY-Certificate-Validator"
+Repository = "https://github.com/CRA-tools/CRACY-Certificate-Validator"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cracy_certval"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

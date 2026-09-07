@@ -1,0 +1,31 @@
+# Generated certificate material. The toolkit writes chains, private keys and
+# reports into the working directory, and none of it belongs in the
+# repository — a committed private key is a committed private key even when
+# it was only ever meant for testing.
+valid_chain_*/
+invalid_chain/
+*_cert_report_*.json
+*.pem
+*.key
+*.csr
+*.crt
+*.der
+*.p12
+*.pfx
+*.p7b
+root_hash.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Editors and tooling
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,21 @@
+CRACY Certificate Validator
+Copyright 2026 Resillion
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Part of the CRACY compliance assessment suite.
+
+
+Third-party content
+-------------------
+
+This repository redistributes no third-party code or data.
+
+The toolkit delegates every certificate operation to OpenSSL, which it
+invokes as an external command and does not bundle. OpenSSL 3.0 and later is
+distributed under the Apache License 2.0 by the OpenSSL Project
+(https://www.openssl.org/).
