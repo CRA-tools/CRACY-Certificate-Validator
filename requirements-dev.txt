@@ -1,6 +1,11 @@
 # Development dependencies. There are no runtime dependencies: the toolkit
 # uses only the standard library plus the system `openssl` binary.
 #
+# pytest 9 requires Python 3.10 or later, while this project supports 3.9, so
+# the pin is split by interpreter rather than loosened into a range — each
+# supported Python still resolves to one exact, reproducible version.
+#
 # The permitted version range lives in pyproject.toml; regenerate this file
 # after changing it.
-pytest==9.1.1
+pytest==8.4.2; python_version < "3.10"
+pytest==9.1.1; python_version >= "3.10"
